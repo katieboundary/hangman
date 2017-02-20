@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-root to: "games#new"
+root to: "games#index"
 resources :users
+resources :games
 
 get '/login' => 'sessions#new'
 post '/login' => 'sessions#create'

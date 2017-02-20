@@ -1,0 +1,16 @@
+<h1>Guess a letter. You have <%= @game.guesses_left %> incorrect guesses left.</h1>
+
+<%= @game.word_display %>
+<p>The word:</p>
+
+<%= @game.word %>
+<p>Guesses so far:</p>
+
+<%= @game.guesses%>
+
+<%= form_tag("/games/#{@game.id}", method: "put") do %>
+  <%= label_tag 'guess a letter' %>
+  <%= text_field_tag :guess %>
+  <%= submit_tag name="Submit Guess"%>
+
+<% end %>
