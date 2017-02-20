@@ -65,7 +65,6 @@ class Game < ApplicationRecord
   # def display_incorrect_guesses
   # end
 
-#default cursor position
 #method to only allow one letter entered at a time.
 #make method to only accept a-z characters --then display message.
 #make method to only display incorrected guesses

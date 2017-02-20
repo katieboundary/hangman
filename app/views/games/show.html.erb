@@ -17,6 +17,10 @@
   <% end %>
 <% elsif @game.won? %>
   <h1>Congratulations! You Win!</h1>
-<% else @game.lose? %>
+  <%= render 'start'  %>
+
+<% else @game.lost? %>
   <h1>Oh no! You lost!</h1>
+  <%= render 'start'  %>
+
 <% end %>
