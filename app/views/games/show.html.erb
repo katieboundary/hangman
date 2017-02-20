@@ -6,14 +6,13 @@
 <%= @game.word %>
 <p>Guesses so far:</p>
 
-<%= @game.guesses%>
+<%= @game.display_incorrect_guesses%>
 
 <% if @game.playing? %>
   <%= form_tag("/games/#{@game.id}", method: "put") do %>
     <%= label_tag 'guess a letter' %>
     <%= text_field_tag :guess, "", :autofocus => true %>
     <%= submit_tag name="Submit Guess"%>
-
   <% end %>
 <% elsif @game.won? %>
   <h1>Congratulations! You Win!</h1>

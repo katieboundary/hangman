@@ -28,7 +28,6 @@ class Game < ApplicationRecord
       return
     else
       self.guesses << letter
-
     end
 
     if word.include?(letter)
@@ -44,26 +43,30 @@ class Game < ApplicationRecord
     self.save!
   end
 
+  #calculates how many incorrect guesses the user has left.
   def guesses_left
     6 - wrong_guesses
   end
 
+  #status check for if a user has won the game.
   def won?
     self.game_status == STATUS_WON
   end
 
+  #status check for if the user has won the game.
   def lost?
     self.game_status == STATUS_LOST
   end
 
+  #status check for if the user is currently playing a game(default).
   def playing?
     self.game_status == STATUS_PLAYING
   end
 
-
-
-  # def display_incorrect_guesses
-  # end
+  def display_incorrect_guesses
+    # guesses - word
+    (guesses.chars.to_a - word.chars.to_a).join(' ')
+  end
 
 #method to only allow one letter entered at a time.
 #make method to only accept a-z characters --then display message.
