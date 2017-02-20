@@ -5,7 +5,7 @@
     <td>User Name</td>
     <td>Score</td>
   </tr>
-  <% Game.leaderboard.each do |user, count| %>
+  <% @leaderboard.each do |user, count| %>
     <tr>
       <td><%= user.name %></td>
       <td><%= count %></td>

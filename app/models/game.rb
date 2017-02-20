@@ -72,10 +72,12 @@ class Game < ApplicationRecord
     (guesses.chars.to_a - word.chars.to_a).join(' ')
   end
 
-  def leaderboard
-    user.games.where("game_status = 2").length
-  end
+  # def leaderboard
+  #   user.games.where("game_status = 2").length
+  # end
 
+  #Group won games by user and order them in descending order. Only include the top ten.
+  #Counts the number of wins for those top ten players.
   def self.leaderboard
     where(:game_status => STATUS_WON).group(:user).order("COUNT(1) DESC").limit(10).count
   end

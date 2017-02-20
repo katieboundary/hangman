@@ -2,6 +2,7 @@ class GamesController < ApplicationController
 
   def index
     @users = User.all
+    @leaderboard = Game.leaderboard
   end
 
   def show
