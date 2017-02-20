@@ -15,24 +15,29 @@ class Game < ApplicationRecord
       if guesses.include? l
         display_word << l
       else
-        display_word << "-"
+        display_word << " _ "
       end
     end
     return display_word
   end
 
-
+  #takes in user guess, downcases the letter, adds letter to guesses string, increase wrong_guesses if incorrect.
   def guess(letter)
     letter = letter.downcase
     if guesses.include?(letter)
       return
     else
       self.guesses << letter
+
     end
 
-    if !word.include?(letter)
+    if word.include?(letter)
+      if !word_display.include?("_") && wrong_guesses < 6
+        self.game_status = STATUS_WON
+      end
+    else
       self.wrong_guesses += 1
-      if self.wrong_guesses == 6
+      if self.wrong_guesses >= 6
         self.game_status = STATUS_LOST
       end
     end
@@ -43,11 +48,24 @@ class Game < ApplicationRecord
     6 - wrong_guesses
   end
 
+  def won?
+    self.game_status == STATUS_WON
+  end
+
+  def lost?
+    self.game_status == STATUS_LOST
+  end
+
+  def playing?
+    self.game_status == STATUS_PLAYING
+  end
+
+
+
   # def display_incorrect_guesses
-  #   guesses -
   # end
 
-#make method to downcase
+#make method to only accept a-z characters --then display message.
 #make method to only display incorrected guesses
 #method to restart game
 #partialize form to enter letters, and button to start new game.

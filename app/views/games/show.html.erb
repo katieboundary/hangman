@@ -8,9 +8,15 @@
 
 <%= @game.guesses%>
 
-<%= form_tag("/games/#{@game.id}", method: "put") do %>
-  <%= label_tag 'guess a letter' %>
-  <%= text_field_tag :guess %>
-  <%= submit_tag name="Submit Guess"%>
+<% if @game.playing? %>
+  <%= form_tag("/games/#{@game.id}", method: "put") do %>
+    <%= label_tag 'guess a letter' %>
+    <%= text_field_tag :guess %>
+    <%= submit_tag name="Submit Guess"%>
 
+  <% end %>
+<% elsif @game.won? %>
+  <h1>Congratulations! You Win!</h1>
+<% else @game.lose? %>
+  <h1>Oh no! You lost!</h1>
 <% end %>
