@@ -9,17 +9,11 @@
 <%= @game.display_incorrect_guesses%>
 
 <% if @game.playing? %>
-  <%= form_tag("/games/#{@game.id}", method: "put") do %>
-    <%= label_tag 'guess a letter' %>
-    <%= text_field_tag :guess, "", :autofocus => true, :maxlength => 1, :size =>2 %>
-    <%= submit_tag name="Submit Guess"%>
-  <% end %>
+  <%= render 'game' %>
 <% elsif @game.won? %>
   <h1>Congratulations! You Win!</h1>
   <%= render 'start'  %>
-
 <% else @game.lost? %>
   <h1>Oh no! You lost!</h1>
   <%= render 'start'  %>
-
 <% end %>

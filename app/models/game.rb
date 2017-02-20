@@ -72,11 +72,20 @@ class Game < ApplicationRecord
     (guesses.chars.to_a - word.chars.to_a).join(' ')
   end
 
-#method to only allow one letter entered at a time.
-#make method to only accept a-z characters --then display message.
-#method to restart game
-#partialize form to enter letters.
+  def leaderboard
+    user.games.where("game_status = 2").length
+  end
 
+  def self.leaderboard
+    where(:game_status => STATUS_WON).group(:user).order("COUNT(1) DESC").limit(10).count
+  end
+
+  # def difficulty
+
+  # end
+
+#add method for game difficulty selection before it starts
+#make method to display message for non a-z chars.
 
 end
 

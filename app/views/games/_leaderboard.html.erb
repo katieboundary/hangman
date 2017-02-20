@@ -1,0 +1,15 @@
+<h2>The leaderboard</h2>
+
+<table border = "1">
+  <tr>
+    <td>User Name</td>
+    <td>Score</td>
+  </tr>
+  <% Game.leaderboard.each do |user, count| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= count %></td>
+    </tr>
+  <% end %>
+</table>
+

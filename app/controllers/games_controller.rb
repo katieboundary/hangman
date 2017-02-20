@@ -1,6 +1,7 @@
 class GamesController < ApplicationController
 
   def index
+    @users = User.all
   end
 
   def show
@@ -11,8 +12,9 @@ class GamesController < ApplicationController
   end
 
   def create
-    p "#"*100
-    p current_user
+    if current_user.nil?
+      redirect_to '/signup'
+    end
     uri = URI("http://linkedin-reach.hagbpyjegb.us-west-2.elasticbeanstalk.com/words")
     @game = Game.new do |g|
       g.word = Net::HTTP.get(uri).split("\n").sample
