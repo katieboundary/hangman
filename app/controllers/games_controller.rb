@@ -18,10 +18,8 @@ class GamesController < ApplicationController
       g.word = Net::HTTP.get(uri).split("\n").sample
       g.user = current_user
     end
-
     @game.save!
     redirect_to @game
-
   end
 
   def update
