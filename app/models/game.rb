@@ -23,6 +23,7 @@ class Game < ApplicationRecord
 
 
   def guess(letter)
+    letter = letter.downcase
     if guesses.include?(letter)
       return
     else
@@ -41,6 +42,10 @@ class Game < ApplicationRecord
   def guesses_left
     6 - wrong_guesses
   end
+
+  # def display_incorrect_guesses
+  #   guesses -
+  # end
 
 #make method to downcase
 #make method to only display incorrected guesses
