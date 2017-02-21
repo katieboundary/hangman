@@ -15,10 +15,6 @@
  */
 
 body{
-  /*background-image: url("letter_photo_bw.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  color: white;*/
   margin: 0px;
   margin-top: 0px;
   padding-top: 0px;
@@ -47,7 +43,7 @@ body{
     background-color: #111;
 }
 
-#hangman{
+#hangman-logo{
   background-color: #2483cc;
   color: white;
   background: linear-gradient(#0099ff, #007acc);
@@ -61,8 +57,91 @@ body{
   padding-right: 3%;
 }
 
+#index{
+  margin-left: 20%;
+  margin-right: 20%;
+}
 
+#top {
+  background: linear-gradient(#595959, #262626);
+  color: white;
+}
 
+#board{
+  width: 30%;
+  margin-left: 35%;
+  margin-right: 20%;
+  padding-top: 5%;
+  border: 1px solid #e6e6e6;
+  font-size: 140%;
+}
+
+#score{
+  width: 10%;
+  padding-left: 1%;
+  padding-top: 2%;
+}
+
+#leaderboard-name{
+  padding-left: 2%;
+}
+
+tbody tr:nth-child(odd) {
+   background-color: #e6e6e6;
+}
+
+.table-head{
+  padding-left: 2%;
+  padding-right: 4%;
+}
+
+#leaderboard-title{
+  text-align: center;
+  padding-bottom: 1%;
+  padding-top: 7%;
+}
+
+#start-button{
+  padding-top: 3%;
+  text-align: center;
+}
+
+#play-a-game{
+  text-align: center;
+}
+
+#hangman-title{
+  text-align: center;
+}
+
+#word-display{
+  padding-top: 3%;
+  font-size: 190%;
+}
+
+.play-game{
+  text-align: center;
+}
+
+#guesses-left{
+  color: #007acc;
+}
+
+#guess-counter{
+  padding-top: 3%;
+  font-size: 200%;
+}
+
+#wrong-guesses{
+  padding-top: 3%;
+  font-size:150%;
+}
+
+#display-incorrect-guesses{
+  padding-bottom: 2%;
+  font-size: 120%;
+  color: #e62e00;
+}
 
 
 

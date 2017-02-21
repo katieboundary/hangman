@@ -21,7 +21,7 @@
   <body>
     <nav class="navbar navbar-default">
       <ul id="nav-bar" role="navigation">
-        <li class="nav navbar-brand" id="hangman">
+        <li class="nav navbar-brand" id="hangman-logo">
           Hangman
         </li>
           <% if current_user %>
@@ -39,6 +39,7 @@
           <% end %>
       </ul>
     </nav>
+    <h1 id="hangman-title">Hangman</h1>
     <%= yield %>
   </body>
 </html>
