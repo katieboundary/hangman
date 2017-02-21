@@ -112,6 +112,9 @@ tbody tr:nth-child(odd) {
 
 #hangman-title{
   text-align: center;
+  color: #007acc;
+  font-size: 300%;
+  text-shadow: 1px 1px 1px #000000;
 }
 
 #word-display{
@@ -143,6 +146,10 @@ tbody tr:nth-child(odd) {
   color: #e62e00;
 }
 
+.log{
+  text-align: center;
+  padding-top: 3%;
+}
 
 
 
