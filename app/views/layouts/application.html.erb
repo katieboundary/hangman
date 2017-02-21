@@ -6,14 +6,40 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
   </head>
 
   <body>
-    <% if current_user %>
-    Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout' %>
-    <% else %>
-    <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
-    <% end %>
+    <nav class="navbar navbar-default">
+      <ul id="nav-bar" role="navigation">
+        <li class="nav navbar-brand" id="hangman">
+          Hangman
+        </li>
+          <% if current_user %>
+        <li class="nav" id="current-user">
+          Hello, <%= current_user.name %>
+        </li>
+        <li class="nav" role="button">
+          <%= link_to "Leaderboard", '/games', {style: "color: white; text-decoration: none;"} %>
+        </li>
+        <li role="button" class="logout nav navbar-nav navbar-right" id="link"><%= link_to "Logout", '/logout', {style: "color: white; text-decoration: none;"} %></li>
+          <% else %>
+        <li role="button" class="logout nav navbar-nav navbar-right">
+          <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup', {style: "color: white; text-decoration: none;"} %>
+        </li>
+          <% end %>
+      </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>
+

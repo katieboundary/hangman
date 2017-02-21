@@ -15,9 +15,59 @@
  */
 
 body{
-  /*background-image: url("letter_photo_bw_2.jpg");
+  /*background-image: url("letter_photo_bw.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   color: white;*/
+  margin: 0px;
+  margin-top: 0px;
+  padding-top: 0px;
 }
+
+#nav-bar{
+  list-style-type: none;
+  width: 100%;
+  background-color: blue;
+  float: left;
+  background-color: #333;
+  color: white;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(#595959, #262626);
+}
+
+.nav{
+  display: inline-block;
+  float: left;
+  padding: 14px 16px;
+}
+
+.nav li a:hover {
+    background-color: #111;
+}
+
+#hangman{
+  background-color: #2483cc;
+  color: white;
+  background: linear-gradient(#0099ff, #007acc);
+}
+
+#current-user{
+  padding-left: 2%;
+}
+
+.logout{
+  padding-right: 3%;
+}
+
+
+
+
+
+
+
+
+
+
 

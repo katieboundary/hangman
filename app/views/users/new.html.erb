@@ -1,11 +1,15 @@
-<h1>Create an account</h1>
+<h1>Create an account to play a game:</h1>
 
 <%= form_for :user, url: '/users' do |f| %>
 
   Name: <%= f.text_field :name %>
+  <p></p>
   Email: <%= f.text_field :email %>
+  <p></p>
   Password: <%= f.password_field :password %>
+  <p></p>
   Password Confirmation: <%= f.password_field :password_confirmation %>
+  <p></p>
   <%= f.submit "Submit" %>
 
 <% end %>
