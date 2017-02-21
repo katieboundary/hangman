@@ -72,14 +72,22 @@ class Game < ApplicationRecord
     (guesses.chars.to_a - word.chars.to_a).join(' ')
   end
 
-  # def leaderboard
-  #   user.games.where("game_status = 2").length
-  # end
-
   #Group won games by user and order them in descending order. Only include the top ten.
   #Counts the number of wins for those top ten players.
   def self.leaderboard
     where(:game_status => STATUS_WON).group(:user).order("COUNT(1) DESC").limit(10).count
+  end
+
+  def to_json
+    {
+      :guesses_left => guesses_left,
+      :word_display => word_display,
+      :display_incorrect_guesses => display_incorrect_guesses,
+      :won => won?,
+      :lost => lost?,
+      :playing => playing?
+
+    }
   end
 
   # def difficulty
@@ -87,6 +95,8 @@ class Game < ApplicationRecord
   # end
 
 #add method for game difficulty selection before it starts
+#method to accept words/phrases
+#method to display a hangman
 #make method to display message for non a-z chars.
 
 end

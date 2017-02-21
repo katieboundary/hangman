@@ -1,19 +1,20 @@
-<h1>Guess a letter. You have <%= @game.guesses_left %> incorrect guesses left.</h1>
+<h1>Guess a letter. You have <div id="guesses-left"><%= @game.guesses_left %></div> incorrect guesses left.</h1>
 
-<%= @game.word_display %>
+<div id="word-display"><%= @game.word_display %></div>
 <p>The word:</p>
 
 <%= @game.word %>
 <p>Guesses so far:</p>
 
-<%= @game.display_incorrect_guesses%>
-
-<% if @game.playing? %>
-  <%= render 'game' %>
-<% elsif @game.won? %>
+<div id="display-incorrect-guesses"><%= @game.display_incorrect_guesses%></div>
+<%= content_tag :div, id: "playing", hidden: !@game.playing? do %>
+  <% render'game' %>
+<% end %>
+<%= content_tag :div, id: "won", hidden: !@game.won? do %>
   <h1>Congratulations! You Win!</h1>
   <%= render 'start'  %>
-<% else @game.lost? %>
+<% end %>
+<%= content_tag :div, id: "lost", hidden: !@game.lost? do %>
   <h1>Oh no! You lost!</h1>
   <%= render 'start'  %>
 <% end %>

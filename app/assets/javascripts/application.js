@@ -14,3 +14,55 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function() {
+  $('#game-form').on('submit', updateGame);
+
+});
+
+function updateGame(event){
+
+    var form = $(this)
+    var data = form.serialize();
+    var url = form.attr('action');
+    var method = form.attr('method');
+
+    $.ajax({
+      url: url,
+      method: method,
+      data: data
+    }).done(function(response){
+
+      console.log(response)
+
+      $('#guess').val('');
+      $('#guess').focus();
+      $('#guesses-left').text(response.guesses_left)
+      $('#word-display').text(response.word_display)
+      $('#display-incorrect-guesses').text(response.display_incorrect_guesses)
+      if (response.playing){
+        $('#playing').show()
+      }
+      else{
+        $('#playing').hide()
+      }
+
+      if (response.won){
+        $('#won').show()
+      }
+      else{
+        $('#won').hide()
+      }
+
+      if (response.lost){
+        $('#lost').show()
+      }
+      else{
+        $('#lost').hide()
+      }
+    });
+};
+
+
+

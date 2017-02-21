@@ -29,7 +29,9 @@ class GamesController < ApplicationController
     letter = params[:guess]
     @game = Game.find(params[:id])
     @game.guess(letter)
-    redirect_to @game
+
+    render :json => @game.to_json
+
   end
 
 end
