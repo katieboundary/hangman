@@ -16,6 +16,7 @@ class GamesController < ApplicationController
     if current_user.nil?
       redirect_to '/signup'
     end
+
     uri = URI("http://linkedin-reach.hagbpyjegb.us-west-2.elasticbeanstalk.com/words")
     @game = Game.new do |g|
       g.word = Net::HTTP.get(uri).split("\n").sample

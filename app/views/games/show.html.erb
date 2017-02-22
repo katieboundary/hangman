@@ -3,6 +3,8 @@
 
   <div id="word-display"><%= @game.word_display %></div>
 
+  <%= @game.word %>
+
   <p id="wrong-guesses">Incorrect Guesses:</p>
 
   <div id="display-incorrect-guesses"><%= @game.display_incorrect_guesses%></div>
@@ -12,11 +14,12 @@
   <% end %>
   <%= content_tag :div, id: "won", hidden: !@game.won? do %>
     <h1>Congratulations! You Win!</h1>
-    <%= render 'start'  %>
   <% end %>
   <%= content_tag :div, id: "lost", hidden: !@game.lost? do %>
     <h3>Oh no! You lost!</h3>
     <h4>The word was: <%=@game.word%></h4>
-    <%= render 'start'  %>
   <% end %>
+
+  <%= render 'start'  %>
+
 </div>
