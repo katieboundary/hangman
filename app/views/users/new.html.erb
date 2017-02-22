@@ -1,6 +1,7 @@
 <div class="log">
   <h2>Create an account to play a game:</h2>
 
+
   <%= form_for :user, url: '/users' do |f| %>
 
     <%= f.text_field :name, placeholder: "Username" %>
@@ -11,7 +12,11 @@
     <p></p>
     <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
     <p></p>
-    <%= f.submit "Submit" %>
+    <%= f.submit "Submit", :class => "btn btn-default" %>
 
+  <% end %>
+
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
   <% end %>
 </div>

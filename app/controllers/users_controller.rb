@@ -9,6 +9,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to '/'
     else
+      flash[:notice] = 'Log in was unsuccessful'
       redirect_to '/signup'
     end
   end

@@ -7,7 +7,10 @@
     <p></p>
     <%= password_field_tag :password, "", placeholder: "Password" %>
     <p></p>
-    <%= submit_tag "Submit" %>
+    <%= submit_tag "Submit", :class => "btn btn-default" %>
 
+  <% end %>
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
   <% end %>
 </div>

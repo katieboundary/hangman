@@ -1,5 +1,5 @@
   <%= form_tag("/games/#{@game.id}", method: "put", remote: true, id: "game-form") do %>
       <%= label_tag 'guess a letter' %>
       <%= text_field_tag :guess, "", :autofocus => true, :maxlength => 1, :size =>2 %>
-      <%= submit_tag "Submit Guess", :id=>"submit-guess" %>
+      <%= submit_tag "Submit Guess", :id=>"submit-guess", :class => "btn btn-default" %>
   <% end %>

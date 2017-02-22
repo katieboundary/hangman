@@ -85,6 +85,7 @@ body{
 
 #leaderboard-name{
   padding-left: 2%;
+  /*font-size: 80%;*/
 }
 
 tbody tr:nth-child(odd) {
@@ -99,16 +100,18 @@ tbody tr:nth-child(odd) {
 #leaderboard-title{
   text-align: center;
   padding-bottom: 1%;
-  padding-top: 2%;
+  padding-top: 0%;
+  font-size: 120%;
 }
 
 #start-button{
-  padding-top: 3%;
   text-align: center;
 }
 
 #play-a-game{
   text-align: center;
+  font-size: 120%;
+  padding-top: -2%;
 }
 
 #hangman-title{
@@ -163,7 +166,21 @@ tbody tr:nth-child(odd) {
   padding-right: 0;
 }
 
+#radio-buttons{
+  padding-bottom: 1%;
+}
 
+#difficulty-new-game{
+  text-align: center;
+}
+
+#select-difficulty{
+  font-size: 120%;
+}
+
+.notice{
+  color: #e62e00;
+}
 
 
 
