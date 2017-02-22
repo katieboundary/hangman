@@ -78,6 +78,7 @@ class Game < ApplicationRecord
     where(:game_status => STATUS_WON).group(:user).order("COUNT(1) DESC").limit(10).count
   end
 
+  #Used for AJAX calls while playing the game.
   def to_json
     {
       :guesses_left => guesses_left,
@@ -89,15 +90,5 @@ class Game < ApplicationRecord
 
     }
   end
-
-  # def difficulty
-
-  # end
-
-#add method for game difficulty selection before it starts
-#method to accept words/phrases
-#method to display a hangman
-#make method to display message for non a-z chars.
-
 end
 
