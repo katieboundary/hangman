@@ -1,0 +1,183 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body{
+  margin: 0px;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+#nav-bar{
+  list-style-type: none;
+  width: 100%;
+  background-color: blue;
+  float: left;
+  background-color: #333;
+  color: white;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(#595959, #262626);
+}
+
+.nav{
+  display: inline-block;
+  float: left;
+  padding: 14px 16px;
+}
+
+.nav li a:hover {
+    background-color: #111;
+}
+
+#hangman-logo{
+  background-color: #2483cc;
+  color: white;
+  background: linear-gradient(#0099ff, #007acc);
+}
+
+#current-user{
+  padding-left: 2%;
+}
+
+.logout{
+  padding-right: 3%;
+}
+
+#index{
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+#top {
+  background: linear-gradient(#595959, #262626);
+  color: white;
+}
+
+#board{
+  width: 30%;
+  margin-left: 35%;
+  margin-right: 20%;
+  padding-top: 5%;
+  border: 1px solid #e6e6e6;
+  font-size: 120%;
+  padding-bottom: 3%;
+}
+
+#score{
+  width: 10%;
+  padding-left: 1%;
+  padding-top: 2%;
+}
+
+#leaderboard-name{
+  padding-left: 2%;
+  /*font-size: 80%;*/
+}
+
+tbody tr:nth-child(odd) {
+   background-color: #e6e6e6;
+}
+
+.table-head{
+  padding-left: 2%;
+  padding-right: 4%;
+}
+
+#leaderboard-title{
+  text-align: center;
+  padding-bottom: 1%;
+  padding-top: 0%;
+  font-size: 120%;
+}
+
+#start-button{
+  text-align: center;
+}
+
+#play-a-game{
+  text-align: center;
+  font-size: 120%;
+  padding-top: -2%;
+}
+
+#hangman-title{
+  text-align: center;
+  color: #007acc;
+  font-size: 300%;
+  text-shadow: 1px 1px 1px #000000;
+  padding-top: 1%;
+}
+
+#word-display{
+  padding-top: 3%;
+  font-size: 190%;
+}
+
+.play-game{
+  text-align: center;
+}
+
+#guesses-left{
+  color: #007acc;
+}
+
+#guess-counter{
+  padding-top: 3%;
+  font-size: 200%;
+}
+
+#wrong-guesses{
+  padding-top: 3%;
+  font-size:150%;
+}
+
+#display-incorrect-guesses{
+  padding-bottom: 2%;
+  font-size: 120%;
+  color: #e62e00;
+}
+
+.log{
+  text-align: center;
+  padding-top: 3%;
+}
+
+.footer{
+  color: black;
+  background-color: black;
+  /*height: 0%;*/
+}
+
+#github{
+  padding-right: 0;
+}
+
+#radio-buttons{
+  padding-bottom: 1%;
+}
+
+#difficulty-new-game{
+  text-align: center;
+}
+
+#select-difficulty{
+  font-size: 120%;
+}
+
+.notice{
+  color: #e62e00;
+}

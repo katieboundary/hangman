@@ -1,0 +1,23 @@
+<div class="play-game">
+  <h1 id="guess-counter">Guess a letter. You have <span id="guesses-left"><%= @game.guesses_left %></span> incorrect guesses left.</h1>
+
+  <div id="word-display"><%= @game.word_display %></div>
+
+  <p id="wrong-guesses">Incorrect Guesses:</p>
+
+  <div id="display-incorrect-guesses"><%= @game.display_incorrect_guesses%></div>
+
+  <%= content_tag :div, id: "playing", hidden: !@game.playing? do %>
+    <% render'game' %>
+  <% end %>
+  <%= content_tag :div, id: "won", hidden: !@game.won? do %>
+    <h1>Congratulations! You Win!</h1>
+  <% end %>
+  <%= content_tag :div, id: "lost", hidden: !@game.lost? do %>
+    <h3>Oh no! You lost!</h3>
+    <h4>The word was: <%=@game.word%></h4>
+  <% end %>
+
+  <%= render 'start'  %>
+
+</div>

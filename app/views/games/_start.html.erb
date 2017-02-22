@@ -1,0 +1,13 @@
+<div id="difficulty-new-game">
+  <h3 id="select-difficulty">Select difficulty level for your next game:</h3>
+  <%= form_tag("/games", method: "create", id: "difficulty-form") do %>
+    <div id="radio-buttons">
+      <% 1.upto(10) do |num| %>
+        <%= radio_button_tag(:difficulty, num, num == 1) %>
+        <%= label_tag(:difficulty, num) %>
+      <% end %>
+    </div>
+    <%= button_to "Start a new game", { :controller => "games", :action => "create"}, :id => "start-button", :class => "btn btn-default" %>
+
+  <% end %>
+</div>
