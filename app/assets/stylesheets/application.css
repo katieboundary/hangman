@@ -123,7 +123,7 @@ tbody tr:nth-child(odd) {
 }
 
 #word-display{
-  padding-top: 3%;
+  padding-top: 2%;
   font-size: 190%;
 }
 
@@ -141,7 +141,7 @@ tbody tr:nth-child(odd) {
 }
 
 #wrong-guesses{
-  padding-top: 3%;
+  padding-top: 2%;
   font-size:150%;
 }
 
