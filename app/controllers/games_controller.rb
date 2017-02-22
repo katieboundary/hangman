@@ -30,11 +30,6 @@ class GamesController < ApplicationController
     letter = params[:guess]
     @game = Game.find(params[:id])
     @game.guess(letter)
-
     render :json => @game.to_json
-
   end
-
 end
-
-

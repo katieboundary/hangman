@@ -1,15 +1,15 @@
 <h3 id="leaderboard-title">Check out the leaderboard. Can you make the top ten?</h3>
-  <table id="board">
-    <thead id="top">
-      <tr>
-        <th class="table-head">Username</th>
-        <th class="table-head">Score</th>
-      </tr>
-    </thead>
-    <% @leaderboard.each do |user, count| %>
-      <tr>
-        <td id="leaderboard-name"><%= user.name %></td>
-        <td id="score"><%= count %></td>
-      </tr>
-    <% end %>
-  </table>
+<table id="board">
+  <thead id="top">
+    <tr>
+      <th class="table-head">Username</th>
+      <th class="table-head">Score</th>
+    </tr>
+  </thead>
+  <% @leaderboard.each do |user, count| %>
+    <tr>
+      <td id="leaderboard-name"><%= user.name %></td>
+      <td id="score"><%= count %></td>
+    </tr>
+  <% end %>
+</table>

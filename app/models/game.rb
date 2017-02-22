@@ -7,7 +7,6 @@ class Game < ApplicationRecord
   STATUS_WON = 2
   STATUS_LOST = 3
 
-
   #display the new word with underscores for each letter. Replace underscores with correct guesses.
   def word_display
     display_word = ""
@@ -87,8 +86,6 @@ class Game < ApplicationRecord
       :won => won?,
       :lost => lost?,
       :playing => playing?
-
     }
   end
 end
-

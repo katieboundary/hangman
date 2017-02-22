@@ -25,19 +25,19 @@
         <li class="nav navbar-brand" id="hangman-logo">
           Hangman
         </li>
-          <% if current_user %>
-        <li class="nav" id="current-user">
-          Hello, <%= current_user.name %>
-        </li>
-        <li class="nav" role="button">
-          <%= link_to "Leaderboard", '/games', {style: "color: white; text-decoration: none;"} %>
-        </li>
-        <li role="button" class="logout nav navbar-nav navbar-right" id="link"><%= link_to "Logout", '/logout', {style: "color: white; text-decoration: none;"} %></li>
-          <% else %>
-        <li role="button" class="logout nav navbar-nav navbar-right">
-          <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup', {style: "color: white; text-decoration: none;"} %>
-        </li>
-          <% end %>
+        <% if current_user %>
+          <li class="nav" id="current-user">
+            Hello, <%= current_user.name %>
+          </li>
+          <li class="nav" role="button">
+            <%= link_to "Leaderboard", '/games', {style: "color: white; text-decoration: none;"} %>
+          </li>
+          <li role="button" class="logout nav navbar-nav navbar-right" id="link"><%= link_to "Logout", '/logout', {style: "color: white; text-decoration: none;"} %></li>
+        <% else %>
+          <li role="button" class="logout nav navbar-nav navbar-right">
+            <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup', {style: "color: white; text-decoration: none;"} %>
+          </li>
+        <% end %>
       </ul>
     </nav>
     <h1 id="hangman-title">Hangman</h1>
@@ -60,4 +60,3 @@
     </footer>
   </body>
 </html>
-
