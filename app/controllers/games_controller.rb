@@ -15,6 +15,7 @@ class GamesController < ApplicationController
   def create
     if current_user.nil?
       redirect_to '/signup'
+      return
     end
     difficulty = params[:difficulty]
     uri = URI("http://linkedin-reach.hagbpyjegb.us-west-2.elasticbeanstalk.com/words?difficulty=#{difficulty}")
